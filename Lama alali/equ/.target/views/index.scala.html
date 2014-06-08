@@ -1,0 +1,32 @@
+@(helloForm: Form[Application.Factors])
+
+@import helper._
+
+@main(title = "Solver") {
+    
+    <h1>enter the factors:</h1>
+    
+    @form(action = routes.Application.solve, args = 'id -> "helloform") {
+        
+        @inputText(
+            field = helloForm("a"),
+            args = '_label -> "Please enter a :",'size -> 3, 'placeholder -> 0
+        )
+                
+        @inputText(
+            field = helloForm("b"),
+            args = '_label -> "Please enter b", 'size -> 3, 'placeholder -> 0
+        )
+        @inputText(
+            field = helloForm("c"),
+            args = '_label -> "Please enter c", 'size -> 3, 'placeholder -> 0
+        )
+        
+        
+        
+        <p class="buttons">
+            <input type="submit"  value="solve">
+        <p>
+        
+    }   
+}
